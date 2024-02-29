@@ -76,7 +76,6 @@ const Index = () => {
                     <IconButton key={index} aria-label={`Rate ${index + 1}`} icon={<FaStar />} onClick={() => handleRating(index + 1)} />
                   ))}
                 </Stack>
-                <IconButton aria-label="Upload art" icon={<FaUpload />} />
               </Flex>
             </Box>
           </Box>
