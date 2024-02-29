@@ -41,13 +41,13 @@ const Index = () => {
   };
 
   return (
-    <Box p={5}>
+    <Box p={5} bgImage="url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" bgPosition="center" bgRepeat="no-repeat" bgSize="cover">
       <Heading mb={6} textAlign="center">
         Art of Technology Community Gallery
       </Heading>
       <Flex wrap="wrap" justifyContent="center" gap={6}>
         {galleryItems.map((item) => (
-          <Box key={item.id} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" bg={useColorModeValue("white", "gray.800")}>
+          <Box key={item.id} maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden" bg={useColorModeValue("white", "gray.800")}>
             <Image src={item.imageUrl} alt={item.title} />
 
             <Box p="6">
@@ -73,7 +73,7 @@ const Index = () => {
                     Comment
                   </Button>
                   {[...Array(6)].map((_, index) => (
-                    <IconButton key={index} aria-label={`Rate ${index + 1}`} icon={<FaStar />} onClick={() => handleRating(index + 1)} />
+                    <IconButton key={index} aria-label={`Rate ${index + 1}`} icon={<FaStar />} onClick={() => handleRating(index + 1)} _hover={{ color: "yellow.400" }} />
                   ))}
                 </Stack>
               </Flex>
