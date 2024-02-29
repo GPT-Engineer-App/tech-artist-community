@@ -10,7 +10,7 @@ const Index = () => {
       id: 1,
       title: "Aurora Borealis",
       technology: "VR Painting",
-      imageUrl: 'https://images.unsplash.com/photo-1483086431886-3590a88317fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxhdXJvcmElMjBib3JlYWxpcyUyMGFydHxlbnwwfHx8fDE3MDkyNTAwNjN8MA&ixlib=rb-4.0.3&q=80&w=1080',
+      imageUrl: "https://images.unsplash.com/photo-1483086431886-3590a88317fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxhdXJvcmElMjBib3JlYWxpcyUyMGFydHxlbnwwfHx8fDE3MDkyNTAwNjN8MA&ixlib=rb-4.0.3&q=80&w=1080",
       rating: 4.5,
       comments: [
         { id: 1, text: "Stunning use of colors!" },
@@ -72,9 +72,9 @@ const Index = () => {
                   <Button leftIcon={<FaRegCommentDots />} onClick={handleCommentSubmit}>
                     Comment
                   </Button>
-                  <Button leftIcon={<FaStar />} onClick={handleRating}>
-                    Rate
-                  </Button>
+                  {[...Array(6)].map((_, index) => (
+                    <IconButton key={index} aria-label={`Rate ${index + 1}`} icon={<FaStar />} onClick={() => handleRating(index + 1)} />
+                  ))}
                 </Stack>
                 <IconButton aria-label="Upload art" icon={<FaUpload />} />
               </Flex>
