@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, IconButton, Text, Stack, Input, Button, useToast, Badge, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, IconButton, Text, Stack, Input, Button, useToast, Badge, useColorModeValue, ButtonGroup } from "@chakra-ui/react";
 import { FaHeart, FaRegCommentDots, FaStar, FaUpload } from "react-icons/fa";
 
 const Index = () => {
@@ -64,7 +64,7 @@ const Index = () => {
                 <Heading fontSize="xl" fontWeight="semibold" as="h4">
                   {item.title}
                 </Heading>
-                <IconButton aria-label="Add to favorites" icon={<FaHeart />} />
+                <IconButton aria-label="Add to favorites" icon={<FaHeart />} _hover={{ color: "red.500" }} />
               </Flex>
 
               <Flex mt={4} alignItems="center" justifyContent="space-between">
@@ -89,6 +89,26 @@ const Index = () => {
             Submit
           </Button>
         </Flex>
+        <Box mt={4}>
+          {/* Example comments section */}
+          <Stack spacing={4}>
+            <Box borderWidth="1px" borderRadius="lg" p={3}>
+              <Text fontSize="md">"Amazing artwork!"</Text>
+              <ButtonGroup variant="outline" spacing="1">
+                <IconButton aria-label="Like comment" icon={<FaHeart />} />
+                <IconButton aria-label="Dislike comment" icon={<FaHeart />} colorScheme="red" variant="ghost" />
+              </ButtonGroup>
+            </Box>
+            <Box borderWidth="1px" borderRadius="lg" p={3}>
+              <Text fontSize="md">"Incredible detail and colors."</Text>
+              <ButtonGroup variant="outline" spacing="1">
+                <IconButton aria-label="Like comment" icon={<FaHeart />} />
+                <IconButton aria-label="Dislike comment" icon={<FaHeart />} colorScheme="red" variant="ghost" />
+              </ButtonGroup>
+            </Box>
+            {/* Add more example comments as needed */}
+          </Stack>
+        </Box>
       </Box>
     </Box>
   );
